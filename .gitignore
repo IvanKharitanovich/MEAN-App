@@ -1,0 +1,28 @@
+# Base structure of ignore file #
+# Packages #
+**/target/
+/target/
+*/target/*
+
+**/.idea/
+/.idea/
+*/.idea/*
+
+**/build/
+/build/
+*/build/*
+
+downloads/
+
+# File extensions #
+*.project
+*.settings
+*.iml
+*.log
+*.png
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
