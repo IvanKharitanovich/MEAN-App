@@ -12,6 +12,8 @@
 /build/
 */build/*
 
+**/node_modules/
+
 downloads/
 
 # File extensions #
