@@ -11,7 +11,7 @@ const orderRoute = require(`./routes/order`);
 const positionRoute = require(`./routes/position`);
 const app = express();
 
-mongoose.connect(`${keys.mongoURI}`).then(() => {
+mongoose.connect(keys.mongoURI).then(() => {
         console.log(`CONNECTED TO DB`)
     }
 )
