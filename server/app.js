@@ -17,7 +17,7 @@ mongoose.connect(keys.mongoURI).then(() => {
     }
 )
 
-app.use(passport.initialize())
+app.use(passport.initialize());
 require('./middleware/passport')(passport);
 
 app.use(morgan('dev'));
