@@ -7,20 +7,20 @@ const morgan = require(`morgan`);
 const keys = require(`./config/keys`)
 const analyticsRoute = require(`./routes/analytics`);
 const authRoute = require(`./routes/auth`);
-const categoryRoute = require(`./routes/category`);
-const orderRoute = require(`./routes/order`);
-const positionRoute = require(`./routes/position`);
+const categoryRoute = require('./routes/category');
+const orderRoute = require('./routes/order');
+const positionRoute = require('./routes/position');
 const app = express();
 
 mongoose.connect(keys.mongoURI).then(() => {
-        console.log(`CONNECTED TO DB`)
+        console.log('CONNECTION TO DB ESTABLISHED')
     }
 )
 
 app.use(passport.initialize())
-require(`./middleware/passport`)(passport);
+require('./middleware/passport')(passport);
 
-app.use(morgan(`dev`));
+app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(cors());

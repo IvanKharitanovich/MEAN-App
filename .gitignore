@@ -15,6 +15,7 @@
 **/node_modules/
 
 downloads/
+**/uploads/
 
 # File extensions #
 *.project

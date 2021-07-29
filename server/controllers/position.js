@@ -1,5 +1,5 @@
-const Position = require(`server/models/Position`);
-const errorHandler = require(`../utils/errorHandler`);
+const Position = require('../models/Position')
+const errorHandler = require('../utils/errorHandler');
 
 module.exports.getByCategoryId = async function (req, res) {
     try {
@@ -31,7 +31,7 @@ module.exports.remove = async function (req, res) {
     try {
         await Position.remove({_id: req.params.id});
         res.status(200).json({
-            message: `removed`
+            message: 'removed'
         })
     } catch (error) {
         errorHandler(res, error);

@@ -1,8 +1,8 @@
-const bcrypt = require(`bcryptjs`);
-const jwt = require(`jsonwebtoken`)
-const User = require(`../models/User`)
-const keys = require(`../config/keys`)
-const errorHandler = require(`../utils/errorHandler`)
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken')
+const User = require('../models/User')
+const keys = require('../config/keys')
+const errorHandler = require('../utils/errorHandler')
 
 module.exports.login = async function (req, res) {
     const candidate = await User.findOne({
@@ -22,12 +22,12 @@ module.exports.login = async function (req, res) {
             })
         } else {
             res.status(403).json({
-                message: `incorrect email or password`
+                message: 'incorrect email or password'
             })
         }
     } else {
         res.status(403).json({
-            message: `incorrect email or password`
+            message: 'incorrect email or password'
         })
     }
 }
@@ -39,7 +39,7 @@ module.exports.register = async function (req, res) {
 
     if (candidate) {
         res.status(409).json({
-            message: `email already exists`
+            message: 'email already exists'
         })
     } else {
         const salt = bcrypt.genSaltSync(10);
@@ -52,7 +52,7 @@ module.exports.register = async function (req, res) {
         try {
             await user.save();
             res.status(201).json({
-                message: `created successfully`
+                message: 'created successfully'
             })
         } catch (error) {
             errorHandler(res, error)
