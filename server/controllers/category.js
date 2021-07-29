@@ -1,5 +1,7 @@
 module.exports.getAll = function (req, res) {
-
+    res.status(200).json({
+        message: `CORRECT`
+    })
 }
 
 module.exports.getById = function (req, res) {
