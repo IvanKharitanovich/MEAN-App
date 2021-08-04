@@ -28,6 +28,8 @@ export class LoginPageComponent implements OnInit, OnDestroy {
         MaterialService.toast('Now you can log in in system');
       } else if (params['accessDenied']) {
         MaterialService.toast('You need to log in in system');
+      } else if (params['sessionFailed']) {
+        MaterialService.toast('Token time expired');
       }
 
     })
