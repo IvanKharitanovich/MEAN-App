@@ -10,32 +10,35 @@
         formControlName="email"
         id="email"
         type="email"
-        [ngClass]="{'invalid':form.get('email').invalid && form.get('email').touched}"
+        [ngClass]="{'invalid': form.get('email').invalid && form.get('email').touched}"
       >
       <label for="email">Email:</label>
       <span
         class="helper-text red-text"
         *ngIf="form.get('email').invalid && form.get('email').touched"
       >
-        <span *ngIf="form.get('email').errors['required']">Email can't be empty</span>
+        <span *ngIf="form.get('email').errors['required']">Email cant be empty</span>
         <span *ngIf="form.get('email').errors['email']">Email is incorrect</span>
       </span>
     </div>
     <div class="input-field">
       <input
-        formControlName="password"
         id="password"
         type="password"
-        [ngClass]="{'invalid':form.get('password').invalid && form.get('password').touched}"
+        formControlName="password"
+        [ngClass]="{'invalid': form.get('password').invalid && form.get('password').touched}"
       >
       <label for="password">Password:</label>
       <span
         class="helper-text red-text"
         *ngIf="form.get('password').invalid && form.get('password').touched"
       >
-        <span *ngIf="form.get('password').errors['required']">Password can't be empty</span>
+        <span *ngIf="form.get('password').errors['required']">Password cant be empty</span>
         <span
-          *ngIf="form.get('password').errors['minlength'] && form.get('password').errors['minlength']['requiredLength']">Password is short</span>
+          *ngIf="form.get('password').errors['minlength'] && form.get('password').errors['minlength']['requiredLength']">
+          Password cant be less then {{form.get('password').errors['minlength']['requiredLength']}} symbols.
+          Actual: {{form.get('password').errors['minlength']['actualLength']}}
+        </span>
       </span>
     </div>
   </div>
@@ -44,7 +47,9 @@
       type="submit"
       class="modal-action btn waves-effect"
       [disabled]="form.invalid || form.disabled"
-    >Register
+    >
+      Register
     </button>
   </div>
 </form>
+
