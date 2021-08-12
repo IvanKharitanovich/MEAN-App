@@ -10,7 +10,7 @@ import {MaterialService} from '../../classes/material.service';
 })
 export class SiteLayoutComponent implements AfterViewInit {
 
-  @ViewChild('floating') floatingRef: ElementRef;
+  @ViewChild('floating') floatingRef: ElementRef
 
   links = [
     {url: '/overview', name: 'Overview'},
@@ -20,7 +20,8 @@ export class SiteLayoutComponent implements AfterViewInit {
     {url: '/categories', name: 'Categories'},
   ]
 
-  constructor(private auth: AuthService, private router: Router) {
+  constructor(private auth: AuthService,
+              private router: Router) {
   }
 
   ngAfterViewInit() {
