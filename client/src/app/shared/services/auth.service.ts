@@ -23,8 +23,8 @@ export class AuthService {
       .pipe(
         tap(
           ({token}) => {
-            localStorage.setItem('auth-token', token);
-            this.setToken(token);
+            localStorage.setItem('auth-token', token)
+            this.setToken(token)
           }
         )
       );
@@ -43,7 +43,7 @@ export class AuthService {
   }
 
   logout() {
-    this.setToken(null);
+    this.setToken(null)
     localStorage.clear();
   }
 }

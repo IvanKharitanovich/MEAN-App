@@ -17,8 +17,8 @@
         class="helper-text red-text"
         *ngIf="form.get('email').invalid && form.get('email').touched"
       >
-        <span *ngIf="form.get('email').errors['required']">Email cant be empty</span>
-        <span *ngIf="form.get('email').errors['email']">Email is incorrect</span>
+        <span *ngIf="form.get('email').errors['required']">Email cannot be empty</span>
+        <span *ngIf="form.get('email').errors['email']">Please enter a valid email address</span>
       </span>
     </div>
     <div class="input-field">
@@ -33,10 +33,10 @@
         class="helper-text red-text"
         *ngIf="form.get('password').invalid && form.get('password').touched"
       >
-        <span *ngIf="form.get('password').errors['required']">Password cant be empty</span>
+        <span *ngIf="form.get('password').errors['required']">Password cannot be empty</span>
         <span
           *ngIf="form.get('password').errors['minlength'] && form.get('password').errors['minlength']['requiredLength']">
-          Password cant be less then {{form.get('password').errors['minlength']['requiredLength']}} symbols.
+          Password must be greater {{form.get('password').errors['minlength']['requiredLength']}} symbols.
           Actual: {{form.get('password').errors['minlength']['actualLength']}}
         </span>
       </span>
@@ -52,4 +52,3 @@
     </button>
   </div>
 </form>
-

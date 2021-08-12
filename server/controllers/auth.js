@@ -22,12 +22,12 @@ module.exports.login = async function (req, res) {
             })
         } else {
             res.status(403).json({
-                message: 'incorrect email or password'
+                message: 'Incorrect email or password'
             })
         }
     } else {
         res.status(403).json({
-            message: 'incorrect email or password'
+            message: 'Incorrect email or password'
         })
     }
 }
@@ -39,7 +39,7 @@ module.exports.register = async function (req, res) {
 
     if (candidate) {
         res.status(409).json({
-            message: 'email already exists'
+            message: 'Email already exists'
         })
     } else {
         const salt = bcrypt.genSaltSync(10);
@@ -52,7 +52,7 @@ module.exports.register = async function (req, res) {
         try {
             await user.save();
             res.status(201).json({
-                message: 'created successfully'
+                message: 'Created successfully'
             })
         } catch (error) {
             errorHandler(res, error)

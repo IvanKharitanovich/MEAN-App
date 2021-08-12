@@ -23,7 +23,7 @@ export class RegisterPageComponent implements OnInit, OnDestroy {
     this.form = new FormGroup({
       email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(null, [Validators.required, Validators.minLength(6)])
-    })
+    });
   }
 
   ngOnDestroy() {
@@ -40,13 +40,12 @@ export class RegisterPageComponent implements OnInit, OnDestroy {
           queryParams: {
             registered: true
           }
-        })
+        });
       },
       error => {
         MaterialService.toast(error.error.message);
         this.form.enable();
       }
-    )
+    );
   }
-
 }
